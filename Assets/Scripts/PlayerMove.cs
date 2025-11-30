@@ -4,28 +4,24 @@ using UnityEngine.InputSystem;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float smoothness = 10f;
 
     private Vector2 moveInput;
-    private Vector2 currentVelocity;
+    private Rigidbody2D rb;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
     }
 
-    private void Update()
+    
+
+    private void FixedUpdate()
     {
-        HandleMovement();
-    }
-
-    private void HandleMovement()
-    {
-        Vector2 targetVelocity = moveInput * moveSpeed;
-
-        currentVelocity = Vector2.Lerp(currentVelocity, targetVelocity, smoothness * Time.deltaTime);
-
-        transform.Translate(currentVelocity * Time.deltaTime);
+        rb.linearVelocity = moveInput * moveSpeed;
     }
 }
-
