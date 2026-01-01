@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e92c3e70a615b41b1b94efd4490448, type: 3}
+  m_Name: PlantsDataSO
+  m_EditorClassIdentifier: 
+  plantPrice: 010000000300000005000000
+  plantTime:
+  - 2
+  - 2
+  - 2
+  plantSellingPrice: 040000000700000009000000
+  PlantProcessImages:
+  - {fileID: -8677211718366676707, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
+  - {fileID: 4209240044320245080, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
+  - {fileID: 8197133288706426242, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
+  - {fileID: 1942767228105140428, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
+  - {fileID: -8582542756511483061, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
+  - {fileID: 8843743897560898563, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
