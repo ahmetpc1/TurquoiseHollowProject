@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e92c3e70a615b41b1b94efd4490448, type: 3}
   m_Name: PlantsDataSO
   m_EditorClassIdentifier: 
-  plantPrice: 010000000300000005000000
+  plantPrice: 090000000500000003000000
   plantTime:
-  - 2
-  - 2
-  - 2
-  plantSellingPrice: 040000000700000009000000
+  - 9
+  - 5
+  - 3
+  plantSellingPrice: 0d0000000700000005000000
   PlantProcessImages:
   - {fileID: -8677211718366676707, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}
   - {fileID: 4209240044320245080, guid: 5baa6b1e52536e344a8a4c5e0c8020db, type: 3}

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,11 +16,14 @@ public class GameManager : MonoBehaviour
     public GameObject FarmingPanel;
     public GameObject ShopPanel;
     public PlantsDataSO plantsDataSO;
+    public float timer;
+    public GameObject GameWinPanel;
 
     [Header("Texts")]
     public TMP_Text Plant1PriceText, Plant2PriceText, Plant3PriceText;
     public TMP_Text Plant1SellingPrice, Plant2SellingPrice, Plant3SellingPrice;
     public TMP_Text Plant1Amount, Plant2Amount, Plant3Amount;
+    public TMP_Text timerText,GameWinTimerText;
 
     void Start()
     {
@@ -32,13 +36,20 @@ public class GameManager : MonoBehaviour
 
         CloseFarmingPanel();
         CloseShopPanel();
-        
+        CloseGameWýnPanel();
+        timer = 0f;
     }
 
 
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        timerText.text = "Time="+ ((int)timer).ToString()+"s";
+
+        if (Input.GetKeyDown(KeyCode.M)) 
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void OpenFarmingPanel()
@@ -66,7 +77,17 @@ public class GameManager : MonoBehaviour
 
         GameManager.Instance.ShopPanel.SetActive(false);
     }
+    public void OpenGameWýnPanel()
+    {
 
+        GameManager.Instance.GameWinPanel.SetActive(true);
+
+    }
+    public void CloseGameWýnPanel()
+    {
+
+        GameManager.Instance.GameWinPanel.SetActive(false);
+    }
     public void RefreshTextData()
     {
         Plant1PriceText.text = plantsDataSO.plantPrice[0]+"$";

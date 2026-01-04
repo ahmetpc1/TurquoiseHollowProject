@@ -17,12 +17,11 @@ public class ShopPanel : MonoBehaviour
     {
         GameManager.Instance.RefreshTextData();
 
-        Debug.Log(plantIndex);
         if (ResourceManager.Instance.plantAmountArray[plantIndex]>=1) 
         {
             ResourceManager.Instance.plantAmountArray[plantIndex]--;
             ResourceManager.Instance.ChangeGoldAmount(GameManager.Instance.plantsDataSO.plantSellingPrice[plantIndex]);
-            Debug.Log("sattin");
         }
+        GameManager.Instance.RefreshTextData();
     }
 }

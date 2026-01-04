@@ -6,13 +6,11 @@ public class Obstecale : MonoBehaviour
     [SerializeField] int goldReward;
     void Start()
     {
-        
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P)&&GameManager.Instance.activeObstecale==this) 
         {
-            Debug.Log("efend'm");
             DestroyObstecale();
         }
     }
@@ -54,6 +52,7 @@ public class Obstecale : MonoBehaviour
     void DestroyObstecale()
     {
         ResourceManager.Instance.ChangeGoldAmount(goldReward);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.puffSound);
         Destroy(gameObject);
     }
 }

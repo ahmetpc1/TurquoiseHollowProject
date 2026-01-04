@@ -21,7 +21,6 @@ public class Tile : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P) && GameManager.Instance.activeTile == this&& currentTileState==TileStates.Empty)
         {
-            Debug.Log("efend'm");
             GameManager.Instance.OpenFarmingPanel();
         }
         if (Input.GetKeyDown(KeyCode.P) && GameManager.Instance.activeTile == this && currentTileState == TileStates.Harvest)
@@ -44,12 +43,11 @@ public class Tile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            
             if (GameManager.Instance.activeTile==this) 
             {
-
                 PlayerOnTile(false);
                 GameManager.Instance.activeTile=null;
+                GameManager.Instance.CloseFarmingPanel(); 
             }
         }
     }
@@ -89,7 +87,6 @@ public class Tile : MonoBehaviour
 
         currentTileState = TileStates.Harvest;
 
-        Debug.Log("hasat zamani");
     }
   
 }

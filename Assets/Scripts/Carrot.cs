@@ -56,11 +56,10 @@ public class Carrot : MonoBehaviour
 
     public void CarrotBuyButton() 
     {
-        if (ResourceManager.Instance.gold>=1000) 
+        if (ResourceManager.Instance.gold>=600) 
         {
-            Debug.Log("win");
-
-
+            GameManager.Instance.GameWinTimerText.text = "Your Score=" + ((int)GameManager.Instance.timer).ToString()+"s";
+            GameManager.Instance.OpenGameWýnPanel();
         }
     }
     public void ExitButton()

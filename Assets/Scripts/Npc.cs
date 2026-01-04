@@ -33,13 +33,13 @@ public class Npc : MonoBehaviour
 
                 PlayerOnNpc(false);
                 GameManager.Instance.activeNpc = null;
+                GameManager.Instance.CloseShopPanel();
             }
         }
     }
 
     void PlayerOnNpc(bool isOnTile)
     {
-
         if (isOnTile)
         {
             this.GetComponent<SpriteRenderer>().color = selectedColor;
@@ -48,6 +48,5 @@ public class Npc : MonoBehaviour
         {
             this.GetComponent<SpriteRenderer>().color = originColor;
         }
-
     }
 }
